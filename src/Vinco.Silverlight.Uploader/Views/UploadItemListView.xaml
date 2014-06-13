@@ -1,0 +1,121 @@
+﻿<UserControl x:Class="Vinco.Silverlight.Views.UploadItemListView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:data="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Data"  
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:triggerActions="clr-namespace:Vinco.Silverlight.Framework.TriggerActions;assembly=Vinco.Silverlight.Uploader" 
+             mc:Ignorable="d">
+
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Commands -->
+        <Grid Grid.Row="0" Margin="5">
+            <StackPanel Orientation="Horizontal">
+
+                <!-- Pause -->
+                <Button x:Uid="btnPause" x:Name="btnPause"
+                    AutomationProperties.AutomationId="btnPause"
+                    Command="{Binding Path=PauseCommand}" 
+                    ToolTipService.ToolTip="{Binding Path=ToolTip}"
+                    Style="{StaticResource ToolbarButton_Style}">
+                    Pause
+                </Button>
+
+                <!-- Cancel -->
+                <Button x:Uid="btnCancel" x:Name="btnCancel"
+                    AutomationProperties.AutomationId="btnCancel"
+                    Command="{Binding Path=CancelCommand}" 
+                    ToolTipService.ToolTip="{Binding Path=ToolTip}"
+                    Style="{StaticResource ToolbarButton_Style}">
+                    Cancel
+                </Button>
+
+                <!-- Clear -->
+                <Button x:Uid="btnClear" x:Name="btnClear"
+                    AutomationProperties.AutomationId="btnClear"
+                    Command="{Binding Path=ClearCommand}" 
+                    ToolTipService.ToolTip="{Binding Path=ToolTip}"
+                    Style="{StaticResource ToolbarButton_Style}">
+                    Clear
+                </Button>
+
+                <!-- Options -->
+                <Button x:Uid="btnOptions" x:Name="btnOptions"
+                    AutomationProperties.AutomationId="btnOptions"
+                    Command="{Binding Path=OptionsCommand}" 
+                    ToolTipService.ToolTip="{Binding Path=ToolTip}"
+                    Style="{StaticResource ToolbarButton_Style}">
+                    Options
+                </Button>
+
+            </StackPanel>
+        </Grid>
+
+        <!-- Upload Items -->
+        <Grid x:Name="dgContent" Grid.Row="1" Margin="5" AllowDrop="True">
+            
+            <!-- Drop handler -->
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="Drop">
+                    <triggerActions:MapDragDropEventToCommand Command="{Binding Path=DropCommand}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+            
+            <!-- Uploads -->
+            <data:DataGrid x:Uid="dgDataGrid" x:Name="dgDataGrid"
+                           AutomationProperties.AutomationId="dgDataGrid"
+                           AutoGenerateColumns="False" SelectionMode="Extended"
+                           HorizontalScrollBarVisibility="Disabled"
+                           IsReadOnly="True"
+                           ItemsSource="{Binding Path=ItemsSource}">
+                
+                <!-- Selection handler -->
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="SelectionChanged">
+                        <i:InvokeCommandAction Command="{Binding Path=SelectedItemsCommand}" CommandParameter="{Binding SelectedItems, ElementName=dgDataGrid}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+
+                <data:DataGrid.Columns>
+                    <data:DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="*" MinWidth="50" />
+                    <data:DataGridTemplateColumn Header="Message" Width="Auto">
+                        <data:DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBox Text="{Binding Message}" 
+                                         IsReadOnly="True"
+                                         AcceptsReturn="True" MaxHeight="200"/>
+                            </DataTemplate>
+                        </data:DataGridTemplateColumn.CellTemplate>
+                    </data:DataGridTemplateColumn>
+                    <data:DataGridTextColumn Header="Size" Binding="{Binding Size}" Width="Auto" />
+                    <data:DataGridTextColumn Header="ETA" Binding="{Binding Eta}" Width="Auto" />
+                    <data:DataGridTextColumn Header="Elapsed" Binding="{Binding Elapsed}" Width="Auto" />
+                    <data:DataGridTextColumn Header="Failed Retries" Binding="{Binding FailedRetries}" Width="Auto" />
+                    <data:DataGridTextColumn Header="Response Time" Binding="{Binding AverageResponse}" Width="Auto" />
+                    <data:DataGridTextColumn Header="Upload Speed" Binding="{Binding UploadSpeed}" Width="Auto" />
+                    <data:DataGridTextColumn Header="Uploaded" Binding="{Binding Uploaded}" Width="Auto" />
+                    <data:DataGridTextColumn Header="Start Date" Binding="{Binding StartDate}" Width="Auto" />
+                    <data:DataGridTextColumn Header="End Date" Binding="{Binding EndDate}" Width="Auto" />
+                    <data:DataGridTextColumn Header="Status" Binding="{Binding Status}" Width="Auto" />
+                    <data:DataGridTextColumn Header="Percent" Binding="{Binding Percent}" Width="Auto" />
+                </data:DataGrid.Columns>
+
+            </data:DataGrid>
+            
+        </Grid>
+
+        <!-- Status -->
+        <Grid Grid.Row="2" Margin="5">
+            <CheckBox Content="Overwrite Existing Files" IsChecked="{Binding Path=OverwriteExistingFiles, Mode=TwoWay}"/>
+        </Grid>
+
+    </Grid>
+    
+</UserControl>

@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{20944518-DD64-4990-9636-643A736FD756}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Vinco.Silverlight</RootNamespace>
+    <AssemblyName>Vinco.Silverlight.Uploader</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>Vinco.Silverlight.Uploader.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>Vinco.Silverlight.Uploader.App</SilverlightAppEntry>
+    <TestPageFileName>Vinco.Silverlight.UploaderTestPage.html</TestPageFileName>
+    <CreateTestPage>true</CreateTestPage>
+    <ValidateXaml>true</ValidateXaml>
+    <EnableOutOfBrowser>true</EnableOutOfBrowser>
+    <OutOfBrowserSettingsFile>Properties\OutOfBrowserSettings.xml</OutOfBrowserSettingsFile>
+    <UsePlatformExtensions>false</UsePlatformExtensions>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <LinkedServerProject>
+    </LinkedServerProject>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <!-- This property group is only here to support building this project using the 
+       MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
+       to set the TargetFrameworkVersion to v3.5 -->
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Controls.Data, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>c:\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\System.Windows.Controls.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Interactivity">
+      <HintPath>..\bin\Silverlight\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Windows.Browser" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Vinco.Uploader\Uploader\DeleteFailedException.cs">
+      <Link>Uploader\DeleteFailedException.cs</Link>
+    </Compile>
+    <Compile Include="..\Vinco.Uploader\Uploader\FileBlockedException.cs">
+      <Link>Uploader\FileBlockedException.cs</Link>
+    </Compile>
+    <Compile Include="..\Vinco.Uploader\Uploader\FileExistsException.cs">
+      <Link>Uploader\FileExistsException.cs</Link>
+    </Compile>
+    <Compile Include="..\Vinco.Uploader\Uploader\FileInfoBase.cs">
+      <Link>Uploader\FileInfoBase.cs</Link>
+    </Compile>
+    <Compile Include="..\Vinco.Uploader\Uploader\FileInfoWrapper.cs">
+      <Link>Uploader\FileInfoWrapper.cs</Link>
+    </Compile>
+    <Compile Include="..\Vinco.Uploader\Uploader\FileLockedException.cs">
+      <Link>Uploader\FileLockedException.cs</Link>
+    </Compile>
+    <Compile Include="..\Vinco.Uploader\Uploader\FileUploadStatus.cs">
+      <Link>Uploader\FileUploadStatus.cs</Link>
+    </Compile>
+    <Compile Include="..\Vinco.Uploader\Uploader\Handlers\ChunkedHttpUploader.cs">
+      <Link>Uploader\Handlers\ChunkedHttpUploader.cs</Link>
+    </Compile>
+    <Compile Include="..\Vinco.Uploader\Uploader\Handlers\UploadHandlerBase.cs">
+      <Link>Uploader\Handlers\UploadHandlerBase.cs</Link>
+    </Compile>
+    <Compile Include="..\Vinco.Uploader\Uploader\HttpUploadCode.cs">
+      <Link>Uploader\HttpUploadCode.cs</Link>
+    </Compile>
+    <Compile Include="..\Vinco.Uploader\Uploader\Tasks\ITask.cs">
+      <Link>Uploader\Tasks\ITask.cs</Link>
+    </Compile>
+    <Compile Include="..\Vinco.Uploader\Uploader\Tasks\ScheduledTasks.cs">
+      <Link>Uploader\Tasks\ScheduledTasks.cs</Link>
+    </Compile>
+    <Compile Include="..\Vinco.Uploader\Uploader\Tasks\Task.cs">
+      <Link>Uploader\Tasks\Task.cs</Link>
+    </Compile>
+    <Compile Include="..\Vinco.Uploader\Uploader\UnauthorizedException.cs">
+      <Link>Uploader\UnauthorizedException.cs</Link>
+    </Compile>
+    <Compile Include="..\Vinco.Uploader\Uploader\UploadEventArgs.cs">
+      <Link>Uploader\UploadEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\Vinco.Uploader\Uploader\UploadException.cs">
+      <Link>Uploader\UploadException.cs</Link>
+    </Compile>
+    <Compile Include="..\Vinco.Uploader\Uploader\UploadInfo.cs">
+      <Link>Uploader\UploadInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\Vinco.Uploader\Uploader\UploadItem.cs">
+      <Link>Uploader\UploadItem.cs</Link>
+    </Compile>
+    <Compile Include="..\Vinco.Uploader\Uploader\UploadItemBase.cs">
+      <Link>Uploader\UploadItemBase.cs</Link>
+    </Compile>
+    <Compile Include="..\Vinco.Uploader\Uploader\Util\FileHelper.cs">
+      <Link>Uploader\Utils\FileHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\Vinco.Uploader\Uploader\Util\JsonSerializer.cs">
+      <Link>Uploader\JsonSerializer.cs</Link>
+    </Compile>
+    <Compile Include="..\Vinco.Uploader\Uploader\Util\MovingAverage.cs">
+      <Link>Uploader\Utils\MovingAverage.cs</Link>
+    </Compile>
+    <Compile Include="..\Vinco.Uploader\Uploader\Util\ProgressHelper.cs">
+      <Link>Uploader\Utils\ProgressHelper.cs</Link>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Commands\AddFilesCommand.cs" />
+    <Compile Include="Commands\CancelCommand.cs" />
+    <Compile Include="Commands\ClearCommand.cs" />
+    <Compile Include="Commands\DropCommand.cs" />
+    <Compile Include="Commands\OptionsCommand.cs" />
+    <Compile Include="Commands\PauseCommand.cs" />
+    <Compile Include="Commands\SelectionChangedCommand.cs" />
+    <Compile Include="Commands\StartUploadCommand.cs" />
+    <Compile Include="Controllers\UploadController.cs" />
+    <Compile Include="Framework\Commands\Command.cs" />
+    <Compile Include="Framework\Models\PropertyChangedBase.cs" />
+    <Compile Include="Framework\TriggerActions\EventDescriptor.cs" />
+    <Compile Include="Framework\TriggerActions\MapDragDropEventToCommand.cs" />
+    <Compile Include="Framework\TriggerActions\MapEventToCommand.cs" />
+    <Compile Include="Framework\TriggerActions\MapEventToCommandBase.cs" />
+    <Compile Include="ViewModels\UploadItemListViewModel.cs" />
+    <Compile Include="ViewModels\UploadItemViewModel.cs" />
+    <Compile Include="ViewModels\UploadViewModel.cs" />
+    <Compile Include="Views\UploadItemListView.xaml.cs">
+      <DependentUpon>UploadItemListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UploadView.xaml.cs">
+      <DependentUpon>UploadView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Page Include="Views\UploadItemListView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\UploadView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\AppManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\OutOfBrowserSettings.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

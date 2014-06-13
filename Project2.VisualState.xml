@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VisualState xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ShowCheckBoxes="false">
+  <TopNode>[0-1000]E:\_Visual-Studio-Projects\2012\Silverlight\Vinco.Uploader.Toolkit\Project2.nunit</TopNode>
+  <SelectedNode>[0-1000]E:\_Visual-Studio-Projects\2012\Silverlight\Vinco.Uploader.Toolkit\Project2.nunit</SelectedNode>
+  <ExcludeCategories>false</ExcludeCategories>
+  <Nodes>
+    <Node UniqueName="[0-1000]E:\_Visual-Studio-Projects\2012\Silverlight\Vinco.Uploader.Toolkit\Project2.nunit" Expanded="true" />
+    <Node UniqueName="[0-1035]E:\_Visual-Studio-Projects\2012\Silverlight\Vinco.Uploader.Toolkit\bin\Vinco.Uploader.Test.dll" Expanded="true" />
+    <Node UniqueName="[0-1036]Vinco" Expanded="true" />
+    <Node UniqueName="[0-1037]Vinco.Uploader" Expanded="true" />
+    <Node UniqueName="[0-1038]Vinco.Uploader.Tasks" Expanded="true" />
+    <Node UniqueName="[0-1009]Vinco.Uploader.UploadItemTest" Expanded="true" />
+    <Node UniqueName="[0-1039]Vinco.Uploader.Util" Expanded="true" />
+    <Node UniqueName="[0-1074]E:\_Visual-Studio-Projects\2012\Silverlight\Vinco.Uploader.Toolkit\src\Test\Vinco.Uploader.Test\bin\Debug\Vinco.Uploader.Test.dll" Expanded="true" />
+    <Node UniqueName="[0-1075]Vinco" Expanded="true" />
+    <Node UniqueName="[0-1076]Vinco.Uploader" Expanded="true" />
+    <Node UniqueName="[0-1077]Vinco.Uploader.Tasks" Expanded="true" />
+    <Node UniqueName="[0-1078]Vinco.Uploader.Util" Expanded="true" />
+  </Nodes>
+</VisualState>

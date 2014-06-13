@@ -1,0 +1,8 @@
+﻿<NUnitProject>
+  <Settings activeconfig="Debug" />
+  <Config name="Debug" binpathtype="Auto">
+    <assembly path="bin\Vinco.Uploader.Test.dll" />
+    <assembly path="src\Test\Vinco.Uploader.Test\bin\Debug\Vinco.Uploader.Test.dll" />
+  </Config>
+  <Config name="Release" binpathtype="Auto" />
+</NUnitProject>
